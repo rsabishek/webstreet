@@ -1,0 +1,147 @@
+/*if(to_move>40) 
+{to_move=to_move-40; 
+imgObj.style.top = '610px';imgObj.style.left = '560px';
+
+if(to_move<=10) flag=-1;  
+else flag=0;
+}
+
+if(to_move<=10)	
+{
+if(flag==-1)  imgObj.style.left = parseInt(imgObj.style.left)-(52*to_move)+'px';	
+	
+else imgObj.style.left = parseInt(imgObj.style.left)-(52*sum_t1)+'px';	
+flag=1;
+}//btm
+
+if(to_move>10 && to_move<=20)
+{
+imgObj.style.left = '25px';		
+		
+if(flag==1) 
+{
+if((to_move-10)<=4)
+imgObj.style.top = 595 - (55*(to_move-10)) +'px'; 
+else
+imgObj.style.top = parseInt(imgObj.style.top) - (55*(to_move-10)) +'px'; 
+}
+
+if(flag==0)
+imgObj.style.top = 595 - (55*(to_move-10)) +'px'; 
+
+
+if(flag==2)
+imgObj.style.top = parseInt(imgObj.style.top) - (52*sum_t1) +'px'; 
+
+flag=2;
+}//lft
+
+if(to_move>=21 && to_move<=30)
+{
+imgObj.style.top = '40px';	
+
+if(flag==2)
+imgObj.style.left = parseInt(imgObj.style.left) + (54*(to_move-20)) + 'px'; 
+
+if(flag==3)
+imgObj.style.left = parseInt(imgObj.style.left) + (54*(sum_t1)) + 'px'; 
+
+flag=3; 
+//j=10;
+}//top
+
+if(to_move>30 && to_move<=40)
+{
+imgObj.style.left = '570px';	
+
+if(flag==3)	
+{
+if(to_move-30<6)	
+imgObj.style.top = 	60 + (55*(to_move-30)) + 'px'; 	
+else
+imgObj.style.top = 	40 + (56*(to_move-30)) + 'px'; 	
+}
+
+if(flag==4)
+{
+imgObj.style.top = parseInt(imgObj.style.top) + (52*sum_t1) +'px'; 	
+}
+flag=4;	
+}//r8*/
+
+}
+
+
+function  mov_p2()
+{
+if(to_mov2>40) 
+{to_mov2=to_mov2-40; 
+imgObj2.style.top = '610px';imgObj2.style.left = '560px';
+
+if(to_mov2<=10) flag2=-1;  
+else flag2=0;
+}
+
+if(to_mov2<=10)	
+{
+if(flag==-1)  imgObj2.style.left = parseInt(imgObj2.style.left)-(52*to_mov2)+'px';	
+	
+else imgObj2.style.left = parseInt(imgObj2.style.left)-(52*sum_t1)+'px';	
+flag2=1;
+}//btm
+
+if(to_mov2>10 && to_mov2<=20)
+{
+imgObj2.style.left = '25px';		
+		
+if(flag2==1) 
+{
+if((to_mov2-10)<=4)
+imgObj2.style.top = 595 - (55*(to_mov2-10)) +'px'; 
+else
+imgObj2.style.top = parseInt(imgObj2.style.top) - (55*(to_mov2-10)) +'px'; 
+}
+
+
+if(flag2==0)
+imgObj2.style.top = 595 - (55*(to_mov2-10)) +'px'; 
+
+if(flag2==2)
+imgObj2.style.top = parseInt(imgObj2.style.top) - (52*sum_t1) +'px'; 
+
+flag2=2;
+}//lft
+
+if(to_mov2>20 && to_mov2<=30)
+{
+imgObj2.style.top = '40px';	
+
+if(flag2==2)
+imgObj2.style.left = parseInt(imgObj2.style.left) + (54*(to_mov2-20)) + 'px'; 
+
+if(flag2==3)
+imgObj2.style.left = parseInt(imgObj2.style.left) + (54*(sum_t1)) + 'px'; 
+
+flag2=3; 
+//j=10;
+}//top
+
+if(to_mov2>30 && to_mov2<=40)
+{
+imgObj2.style.left = '570px';	
+
+if(flag2==3)	
+{
+if(to_mov2-30<6)	
+imgObj2.style.top = 	60 + (55*(to_mov2-30)) + 'px'; 	
+else
+imgObj2.style.top = 	40 + (56*(to_mov2-30)) + 'px'; 	
+}
+
+if(flag2==4)
+{
+imgObj2.style.top = parseInt(imgObj2.style.top) + (52*sum_t1) +'px'; 	
+}
+flag2=4;	
+}//r8
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+
+ <body>
+  Hello, <span id="my-name">User</span>!
+  Enter name: <input type="text" id="user-name" value="My Name" />
+  <input type="button" id="greet-button" value="Greet Me" />
+  <script>
+   function PerformGreeting () {
+    document.getElementById("my-name").innerHTML =
+     document.getElementById("user-name").value ;
+   }
+   var GreetButton = document.getElementById("greet-button") ;
+   GreetButton.onclick = PerformGreeting ;
+  </script>
+ </body>
+
+
+
+</html>

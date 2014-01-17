@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+ <style>
+ button {
+position: absolute;
+top: 100px;
+left: 150px;}
+
+city
+{
+position: absolute;
+top: 600px;
+left: 600px;
+}
+</style>
+ 
+ 
+ 
+</head>
+
+<script>
+function point_it(event){
+    pos_x = event.offsetX?(event.offsetX):event.pageX-document.getElementById("pointer_div").offsetLeft;
+    pos_y = event.offsetY?(event.offsetY):event.pageY-document.getElementById("pointer_div").offsetTop;
+    document.getElementById("cross").style.left = (pos_x-1) ;
+    document.getElementById("cross").style.top = (pos_y-15) ;
+    document.getElementById("cross").style.visibility = "visible" ;
+    document.pointform.form_x.value = pos_x;
+    document.pointform.form_y.value = pos_y;
+	
+	
+if(pos_x>590 && pos_x<600) { alert('clicked!'); }
+		
+}
+
+/*
+JavaScript dice (by JavaScript Kit, http://javascriptkit.com)
+Over 200+ free scripts here!
+*/
+
+//preload the six images first
+var face0=new Image()
+face0.src="d1.gif"
+var face1=new Image()
+face1.src="d2.gif"
+var face2=new Image()
+face2.src="d3.gif"
+var face3=new Image()
+face3.src="d4.gif"
+var face4=new Image()
+face4.src="d5.gif"
+var face5=new Image()
+face5.src="d6.gif"
+</script>
+
+<div style="position:absolute;top:450px;left:200px">
+<img src="d1.gif" name="mydice1">
+<img src="d1.gif" name="mydice2">
+</div>
+
+<form>
+<input type="button" value="Throw dice!" onClick="throwdice()">
+</form>
+
+<script>
+
+var imgObj = null;
+var sum_t1;
+var to_move =0;
+var flag=0;
+//var j=36;
+
+function throwdice()
+{
+//create a random integer between 0 and 5
+var randomdice1 =  Math.round(Math.random()*5);
+var randomdice2 =  Math.round(Math.random()*5);
+
+sum_t1  = (randomdice1 + randomdice2 + 2);
+
+//sum_t1=j;flag=3;
+to_move = to_move+sum_t1;
+
+//j=7;i=0;
+
+document.images["mydice1"].src=eval("face"+randomdice1+".src");
+document.images["mydice2"].src=eval("face"+randomdice2+".src");
+
+
+mov_p1();
+}
+
+function init()
+{
+imgObj = document.getElementById('token1');
+imgObj.style.position= 'absolute'; 
+imgObj.style.left = '560px'; 	
+imgObj.style.top = '610px'; 	
+}
+
+function  mov_p1()
+{
+document.getElementById("d").innerHTML="sum:"+sum_t1;	
+document.getElementById("d3").innerHTML="curr:"+to_move;	
+//document.write(sum_t1);
+
+if(to_move>40) 
+{to_move=to_move-40; imgObj.style.top = '610px';imgObj.style.left = '560px';
+
+if(to_move<=10) flag=-1;  
+else flag=0;
+}
+
+
+if(to_move<=10)	
+{
+if(flag==-1)  imgObj.style.left = parseInt(imgObj.style.left)-(52*to_move)+'px';	
+
+else imgObj.style.left = parseInt(imgObj.style.left)-(52*sum_t1)+'px';	
+flag=1;
+}//btm
+
+if(to_move>10 && to_move<=20)
+{
+imgObj.style.left = '25px';		
+		
+if(flag==1) 
+{
+if((to_move-10)<=4)
+imgObj.style.top = 595 - (55*(to_move-10)) +'px'; 
+else
+imgObj.style.top = parseInt(imgObj.style.top) - (55*(to_move-10)) +'px'; 
+}
+
+
+if(flag==0)
+imgObj.style.top = 595 - (55*(to_move-10)) +'px'; 
+
+
+if(flag==2)
+imgObj.style.top = parseInt(imgObj.style.top) - (52*sum_t1) +'px'; 
+
+
+flag=2;
+}//lft
+
+
+if(to_move>20 && to_move<=30)
+{
+imgObj.style.top = '40px';	
+
+if(flag==2)
+imgObj.style.left = parseInt(imgObj.style.left) + (54*(to_move-20)) + 'px'; 
+
+if(flag==3)
+imgObj.style.left = parseInt(imgObj.style.left) + (54*(sum_t1)) + 'px'; 
+
+
+flag=3; 
+j=10;
+}//top
+
+
+if(to_move>30 && to_move<=40)
+{
+imgObj.style.left = '570px';	
+
+if(flag==3)	
+{
+if(to_move-30<6)	
+imgObj.style.top = 	60 + (55*(to_move-30)) + 'px'; 	
+else
+imgObj.style.top = 	40 + (56*(to_move-30)) + 'px'; 	
+}
+
+if(flag==4)
+{
+imgObj.style.top = parseInt(imgObj.style.top) + (52*sum_t1) +'px'; 	
+}
+
+
+flag=4;	
+}//r8
+
+
+
+
+}
+
+window.onload =init;
+</script>
+
+<body>
+<form name="pointform" method="post">
+ <div id="pointer_div" onclick="point_it(event)" style = "background-image:url('blogn.jpg');width:637px;height:638px;">
+<img src="point.gif" width="11" height="12" id="cross" style="position:relative;visibility:hidden;z-index:2;"><span style="position:absolute;top:630px;left:580px"></span></div>
+
+<!--You pointed on x = <input type="text" name="form_x" size="4" /> - y = <input type="text" name="form_y" size="4" />-->
+</form> 
+
+<div id="token1" style="position:absolute;top:610px;left:560px">
+<img src="new_dogg.gif" width="59" height="50" alt="dogg"/>
+</div>
+
+<!--<div style="position:absolute;top:30px;left:680px">
+<!--<img src="" width="139" height="208" alt="yahoo" />-->
+
+<p id="d"> the topic </p>
+<p id="d3"> the topic </p>
+
+
+<div id="token1" style="position:absolute;top:583px;left:540px">
+<input type="radio" name="city">
+</div>
+
+
+</body>
+
+</html>
